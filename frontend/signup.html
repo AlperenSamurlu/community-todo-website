@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community To-Do - Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Mevcut stil kodlarınız */
+    body {
+      margin: 0;
+      background-color: #000000; /* Siyah arka plan */
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .signup-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .signup-form {
+      background-color: #121212; /* Koyu gri form arka planı */
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-control {
+      background-color: #1f1f1f; /* Koyu input alanı */
+      border: 1px solid #333333;
+      color: #ffffff;
+    }
+
+    .form-control::placeholder {
+      color: #b0bec5; /* Placeholder için açık gri */
+    }
+
+    .form-control:focus {
+      background-color: #2a2a2a;
+      color: #ffffff;
+      border-color: #1e88e5;
+      box-shadow: none;
+    }
+
+    .btn-primary {
+      background-color: #1e88e5;
+      border: none;
+      width: 100%;
+      font-size: 1.2rem;
+      padding: 0.75rem;
+    }
+
+    .btn-primary:hover {
+      background-color: #1565c0;
+    }
+
+    .signup-header {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #e3e3e3;
+    }
+
+    .text-muted {
+      color: #b0bec5 !important;
+    }
+
+    .form-check-label a {
+      color: #64b5f6 !important;
+      text-decoration: none;
+    }
+
+    .form-check-label a:hover {
+      color: #42a5f5 !important;
+    }
+
+    .modal-content {
+      background-color: #1c1c1c;
+      border-radius: 10px;
+    }
+
+    .modal-body {
+      font-size: 1rem; /* Yazı boyutunu ayarladık */
+      line-height: 1.6; /* Satır yüksekliği daha okunabilir hale getirildi */
+    }
+
+    .modal-footer {
+      justify-content: flex-end; /* Kapat düğmesi sağ alt köşeye taşındı */
+    }
+
+    .modal-lg {
+      max-width: 800px; /* Genişliği artırıldı */
+    }
+
+    /* Şifre uyarı mesajı */
+    .invalid-feedback {
+      display: none;
+    }
+
+    input.is-invalid + .invalid-feedback {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Signup Section -->
+  <div class="container-fluid signup-section">
+    <h1 class="signup-header">Create Your Account</h1>
+    <form id="signupForm" class="signup-form">
+      <div id="messageBox" style="display: none;"></div> <!-- Mesaj kutusu -->
+      <div class="mb-3">
+        <label for="signupUsername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="signupUsername" placeholder="Enter your username" required>
+      </div>
+      <div class="mb-3">
+        <label for="signupEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required>
+      </div>
+      <div class="mb-3">
+        <label for="signupPassword" class="form-label">Password</label>
+        <input type="password" class="form-control" id="signupPassword" placeholder="Enter your password" required>
+        <div class="invalid-feedback">
+          The password must be at least 8 characters long.
+        </div>
+      </div>
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="termsCheckbox">
+        <label class="form-check-label" for="termsCheckbox">
+          I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a>.
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary" disabled>Sign Up</button>
+    </form>
+    
+    <p class="text-muted mt-4">Already have an account? <a href="login.html" class="text-primary">Log In</a></p>
+  </div>
+
+  <!-- Terms and Conditions Modal -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg"> <!-- Genişliği artırıldı -->
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+        </div>
+        <div class="modal-body" style="max-height: 500px; overflow-y: auto;"> <!-- Kaydırılabilir içerik -->
+          <h6>User Agreement</h6>
+          <p>Effective Date: 06.01.2025</p>
+          
+          <p>This User Agreement ("Agreement") governs your use of the tasktogether-todo.com platform ("Platform"), including any services, content, or functionality provided. By accessing or using the Platform, you agree to be bound by the terms of this Agreement. If you do not agree to these terms, please do not use the Platform.</p>
+          
+          <h6>1. Acceptance of Terms</h6>
+          <p>By using the Platform, you acknowledge that you have read, understood, and agreed to this Agreement. You affirm that you are at least 18 years old or have legal capacity in your jurisdiction to enter into this Agreement.</p>
+          
+          <h6>2. No Liability for Damages</h6>
+          <p>To the fullest extent permitted by applicable law, the Platform and its owners, operators, employees, affiliates, agents, and partners (collectively, "We" or "Us") shall not be liable for any direct, indirect, incidental, consequential, punitive, or special damages arising out of or related to:</p>
+          <ul>
+            <li>Your use of or inability to use the Platform.</li>
+            <li>Loss of data, revenue, profits, or business opportunities.</li>
+            <li>Unauthorized access to or alterations of your data or transmissions.</li>
+            <li>Any errors, inaccuracies, bugs, or interruptions in the Platform.</li>
+          </ul>
+          <p>You agree that your use of the Platform is entirely at your own risk. We make no warranties, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+          
+          <h6>3. No Responsibility for User Actions</h6>
+          <p>The Platform serves as a tool or service. We do not control or monitor user actions, and we disclaim all liability for:</p>
+          <ul>
+            <li>Misuse or abuse of the Platform by users.</li>
+            <li>Harm caused by third parties through the use of the Platform.</li>
+            <li>Inaccuracies or misinterpretations of any content provided through the Platform.</li>
+          </ul>
+          <p>You are solely responsible for your actions, conduct, and decisions made while using the Platform.</p>
+          
+          <h6>4. Indemnification</h6>
+          <p>You agree to indemnify, defend, and hold harmless the Platform and its affiliates from and against any and all claims, liabilities, damages, losses, or expenses (including reasonable attorney fees) arising out of:</p>
+          <ul>
+            <li>Your use of the Platform.</li>
+            <li>Violation of this Agreement or any applicable laws.</li>
+            <li>Any dispute between you and another user or third party.</li>
+          </ul>
+          
+          <h6>5. Limitation of Liability</h6>
+          <p>In jurisdictions where limitations of liability are not fully enforceable, our liability shall be limited to the maximum extent permitted by applicable law. If any liability is found, our total liability to you shall not exceed the total amount you paid (if any) to use the Platform.</p>
+          
+          <h6>6. No Guarantee of Availability</h6>
+          <p>We do not guarantee the availability, accuracy, or reliability of the Platform. The Platform may be subject to maintenance, outages, or unforeseen issues beyond our control. You understand and agree that service interruptions or data loss are risks inherent in using the Platform.</p>
+          
+          <h6>7. Modifications to the Agreement</h6>
+          <p>We reserve the right to modify or update this Agreement at any time without prior notice. Changes will be effective immediately upon posting. Continued use of the Platform after any changes constitutes your acceptance of the new terms.</p>
+          
+          <h6>8. Governing Law and Jurisdiction</h6>
+          <p>This Agreement shall be governed by and construed in accordance with the laws of the Republic of Turkey. Any disputes, claims, or controversies arising out of or related to this Agreement, including the use of the Platform, shall exclusively be resolved in the courts of Turkey. By agreeing to these terms, you consent to the exclusive jurisdiction of the Turkish courts for any legal proceedings.</p>
+          
+          <h6>9. Severability</h6>
+          <p>If any provision of this Agreement is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</p>
+          
+          <h6>10. Contact Information</h6>
+          <p>If you have any questions regarding this Agreement, please contact us at:</p>
+          <ul>
+            <li>Email: tasktogether.todo@gmail.com</li>
+          </ul>
+          
+          <p>By using the Platform, you acknowledge and agree to the terms outlined above.</p>
+        </div>
+        <div class="modal-footer border-0 d-flex justify-content-end">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Kendi JS Dosyanız -->
+  <script type="module" src="scripts/signup.js"></script>
+</body>
+</html>

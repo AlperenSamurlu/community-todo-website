@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community To-Do - Verification</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .verification-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .verification-form {
+      background-color: #121212;
+      border-radius: 8px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-control {
+      background-color: #1f1f1f;
+      border: 1px solid #333333;
+      color: #ffffff;
+      text-align: center;
+      font-size: 1.5rem;
+      letter-spacing: 5px;
+    }
+
+    .form-control::placeholder {
+      color: #b0bec5;
+    }
+
+    .form-control:focus {
+      background-color: #2a2a2a;
+      border-color: #1e88e5;
+      box-shadow: none;
+      color: #ffffff; /* Kullanıcının girdiği kodun rengi */
+    }
+
+    .btn-primary {
+      background-color: #1e88e5;
+      border: none;
+      width: 100%;
+      font-size: 1.2rem;
+      padding: 0.75rem;
+    }
+
+    .btn-primary:hover {
+      background-color: #1565c0;
+    }
+
+    .verification-header {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #e3e3e3;
+    }
+
+    .text-muted {
+      color: #b0bec5 !important;
+    }
+
+    .error-message {
+      color: #e53935;
+      font-size: 0.9rem;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Verification Section -->
+  <div class="container-fluid verification-section">
+    <h1 class="verification-header">Verify Your Email</h1>
+    <p class="text-muted">We’ve sent a 6-digit verification code to your email address.</p>
+    <form class="verification-form" id="verificationForm">
+      <div class="mb-3">
+        <label for="verificationCode" class="form-label text-muted">Enter Code</label>
+        <input type="text" class="form-control" id="verificationCode" placeholder="123456" maxlength="6" required>
+        <div class="error-message" id="error-message">Invalid code. Please try again.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Verify</button>
+    </form>
+    <p class="text-muted mt-4">Didn't receive the code? <a href="#" class="text-primary" id="resendCode">Resend Code</a></p>
+    <div id="messageBox" style="display: none;"></div>
+  </div>
+  
+  <script type="module" src="scripts/verification.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+

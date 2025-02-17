@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community To-Do - Welcome</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000000; /* Tamamen siyah arka plan */
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #e3e3e3; /* Daha açık bir metin rengi */
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-text {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #b0bec5; /* Kontrast artırılmış gri */
+    }
+
+    .btn-primary {
+      background-color: #1e88e5;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #1565c0;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-outline-light {
+      border: 1px solid #ffffff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #ffffff;
+      color: #121212;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background-color: #121212; /* Hafifçe gri tonunda koyu arka plan */
+      padding: 1rem 0;
+    }
+
+    footer p {
+      color: #b0bec5;
+      margin: 0;
+    }
+
+    /* Animasyonlar */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="container-fluid hero-section">
+    <h1 class="hero-title">Welcome to Community To-Do</h1>
+    <p class="hero-text">
+      Collaborate with your community, stay organized, and achieve your goals together.
+    </p>
+    <div>
+      <a href="login.html" class="btn btn-primary btn-lg me-2">Log In</a>
+      <a href="signup.html" class="btn btn-outline-light btn-lg">Sign Up</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <p>&copy; 2024 Community To-Do. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

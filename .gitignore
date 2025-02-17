@@ -1,0 +1,27 @@
+# Visual Studio ve Rider gibi IDE'lerin klasörleri
+.vs/
+.idea/
+.vscode/
+
+# Derleme çıktıları
+bin/
+obj/
+
+# Kullanıcı ve yapılandırma dosyaları
+*.user
+*.suo
+*.cache
+*.log
+
+# Paket yönetimi dosyaları
+node_modules/
+packages/
+
+# Çalışma zamanı dosyaları
+*.db
+*.sqlite
+*.sqlite3
+
+# Geçici dosyalar
+*.tmp
+*.bak
