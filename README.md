@@ -1,6 +1,7 @@
 ----------
 
-**Web Site Adresi : TaskTogether.com.tr**
+#### Web Site Adresi : TaskTogether.com.tr
+
 **Proje: Community To-Do**
 # 1. Proje Tanımı
 
@@ -20,11 +21,11 @@ tasarımı sağlanmıştır.
 
 # 2. Kullanıcı Arayüzü
 
-## 2.1)Anasayfa(Index.html)
+## 2.1 Anasayfa(Index.html)
 
 -   Kullanıcıya giriş yapma veya kayıt olma seçenekleri sunar.
 
-## 2.2)Kayıt Olma Sayfası(signup.html)
+## 2.2 Kayıt Olma Sayfası(signup.html)
 
 -   Yeni kullanıcıların kayıt olmalarını sağlar.
 -   Kullanıcıdan ad, e-posta ve şifre bilgileri alır.
@@ -33,20 +34,20 @@ tasarımı sağlanmıştır.
     işlemi sırasında platformun **Kullanıcı Sözleşmesi** ve  
     **Gizlilik Politikası** şartlarını kabul etmelidir.
 
-## 2.3) Doğrulama Sayfası (verification.html)
+## 2.3 Doğrulama Sayfası (verification.html)
 
 -   Kayıt sırasında e-posta doğrulaması için kullanılır.
 -   Kullanıcının e-posta adresine gönderilen kod doğrulanır.
 -   Doğrulama 2 dakika içinde yapılmazsa sql tablolarından  
     kullanıcıya ait veriler silinir.
 
-## 2.4) Giriş Sayfası (login.html)
+## 2.4 Giriş Sayfası (login.html)
 
 -   Kayıtlı kullanıcıların giriş yapmasına olanak tanır.
 -   Kullanıcı e-posta ve şifresi doğrulanır ve giriş yapılır.
 -   Başarısız giriş durumunda hata mesajı gösterir
 
-## 2.5) Dashboard (dashboard.html)
+## 2.5 Dashboard (dashboard.html)
 
 
 ### 2.5.1. Topluluk İşlemleri
@@ -163,15 +164,15 @@ tasarımı sağlanmıştır.
     
    
 
-## 2.6) Sıfırlama Kodu Giriş Sayfası (password- reset-code.html)
+## 2.6 Sıfırlama Kodu Giriş Sayfası (password- reset-code.html)
 
 -   Kullanıcıdan e-posta adresi alır ve şifre sıfırlama kodu gönderir
 
-## 2.7) Sıfırlama Kodu Giriş Sayfası (password-reset-code.html)
+## 2.7 Sıfırlama Kodu Giriş Sayfası (password-reset-code.html)
 
 -   Kullanıcıdan gelen doğrulama kodunu kontrol eder
 
-## 2.8) Şifre Oluşturma Sayfası (password-reset-form.html)
+## 2.8 Şifre Oluşturma Sayfası (password-reset-form.html)
 
 -   Kullanıcının yeni bir şifre oluşturmasını sağlar
 
@@ -182,7 +183,7 @@ Community To-Do platformunun backend yapısı, ASP.NET Core framework'ü
 kullanılarak geliştirilmiştir. Model-View-Controller (MVC) mimarisi temel
 alınarak esnek ve sürdürülebilir bir yapı oluşturulmuştur.
 ```
-## 3.1) Controllers (Denetleyiciler)
+## 3.1 Controllers (Denetleyiciler)
 ### 3.1.1 CommunitiesController
 
 
@@ -251,7 +252,7 @@ alınarak esnek ve sürdürülebilir bir yapı oluşturulmuştur.
     o SendNotification: Bildirim gönderir.  
     o GetNotifications: Kullanıcının tüm bildirimlerini listeler.
 
-## 3.2. AppDbContext
+## 3.2 AppDbContext
 
 -   **Amaç** : Veritabanı ile uygulama arasındaki bağlantıyı yönetir.
 -   **Teknik Detaylar** :
@@ -263,7 +264,7 @@ ilişkileri için tablolar tanımlanmıştır.
 ```
 
 
-## 3.3. DTO Yapısı (Data Transfer Objects)
+## 3.3 DTO Yapısı (Data Transfer Objects)
 
 
 -   **Amaç** : API üzerinden gönderilen veya alınan verileri taşır.
@@ -278,7 +279,7 @@ ilişkileri için tablolar tanımlanmıştır.
     o LoginRequest: Kullanıcının giriş bilgilerini taşır (ör. e-posta, şifre).
 
 
-## 3.4. MVC Yapısına Uygunluk
+## 3.4 MVC Yapısına Uygunluk
 
 
 -   **Model-View-Controller** mimarisi, temiz kod ve sürdürülebilirlik sağlar.  
@@ -287,7 +288,7 @@ ilişkileri için tablolar tanımlanmıştır.
     o **View** : Ön uçta kullanıcıya sunulan sayfalar.
 
 
-## 3.5. EmailService
+## 3.5 EmailService
 
 
 -   **Amaç** : Kullanıcılara doğrulama kodları ve bildirimler göndermek.
@@ -299,7 +300,7 @@ ilişkileri için tablolar tanımlanmıştır.
 # 4. Veritabanı
 
 
-## 4.1. __EFMigrationsHistory Tablosu
+## 4.1 __EFMigrationsHistory Tablosu
 
 
 -   **Amaç** : Migration geçmişini izlemek için kullanılır.
@@ -317,7 +318,7 @@ o Veritabanı şemasında yapılan değişikliklerin kaydını tutar.
 o Geriye dönük değişikliklere olanak sağlar.
 ```
 
-## 4.2. Communities Tablosu
+## 4.2 Communities Tablosu
 
 -   **Amaç** : Toplulukların detaylarını saklar.
 -   **Kolonlar** :
@@ -337,7 +338,7 @@ o CreatedBy → Users.UserId: Topluluğu oluşturan kullanıcıyı belirtir.
 o Birden Çoğa İlişki : Bir kullanıcı birden fazla topluluk oluşturabilir.
 ```
 
-## 4.3. Notifications Tablosu
+## 4.3 Notifications Tablosu
 
 -   **Amaç** : Kullanıcılara bildirim göndermek için kullanılır.
 -   **Kolonlar** :
@@ -355,7 +356,7 @@ o CreatedAt: Bildirimin oluşturulma tarihi.
 o UserId → Users.UserId: Bildirimi alan kullanıcıyı belirtir.
 ```
 
-## 4.4. Tasks Tablosu
+## 4.4 Tasks Tablosu
 
 -   **Amaç** : Kullanıcılar ve topluluklar için görevleri yönetir.
     
@@ -383,7 +384,7 @@ topluluğu belirtir.
 o Birden Çoğa İlişki : Bir topluluk birden fazla görev içerebilir.
 ```
 
-## 4.5. UserCommunities Tablosu
+## 4.5 UserCommunities Tablosu
 
 -   **Amaç** : Kullanıcı ve topluluk ilişkilerini yönetir.
 -   **Kolonlar** :
@@ -403,7 +404,7 @@ o Birden Çoğa İlişki :
 ▪ CommunityId → Communities.CommunityId: Topluluk bilgisi.
 ```
 
-## 4.6. Users Tablosu
+## 4.6 Users Tablosu
 
 -   **Amaç** : Platforma kayıtlı kullanıcıların bilgilerini tutar.
 -   **Kolonlar** :
