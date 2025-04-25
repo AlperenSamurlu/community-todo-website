@@ -44,8 +44,12 @@ namespace ToDoBackend.Controllers
                 .ToListAsync();
 
             var tasks = await _context.Tasks
-                .Where(t => t.IsIndividual || (t.CommunityId != null && userCommunities.Contains(t.CommunityId.Value)))
-                .ToListAsync();
+    .Where(t =>
+        (t.IsIndividual && t.CreatedBy == userId) || // Sadece kendine ait bireysel görevler
+        (!t.IsIndividual && t.CommunityId != null && userCommunities.Contains(t.CommunityId.Value)) // Topluluk görevleri
+    )
+    .ToListAsync();
+
 
             return Ok(new { values = tasks });
         }
@@ -337,7 +341,14 @@ namespace ToDoBackend.Controllers
             {
                 return NotFound(new { message = "Task not found" });
             }
-
+	if (task.IsIndividual)
+    {
+        // Eğer görev bireysel ise, sadece oluşturan kişi görebilir
+        if (task.CreatedBy != userId)
+        {
+            return Forbid("You are not authorized to view this individual task.");
+        }
+    }
             // Eğer görev topluluğa aitse, ilgili toplulukta üye misiniz kontrolü
             if (!task.IsIndividual && task.CommunityId.HasValue)
             {

@@ -25,3 +25,6 @@ packages/
 # Geçici dosyalar
 *.tmp
 *.bak
+
+#Appsettings.json
+/backend/ToDoBackend/ToDoBackend/appsettings.json
